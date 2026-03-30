@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Vault</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+  <div id="root" class="min-h-screen flex flex-col gap-2 p-4 bg-[#F3F4F6]">
+    <div class="flex gap-8 items-center p-4 bg-[#E9ECF5] rounded-full">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input class="flex-1 text-center outline-none" placeholder="Search">
+    </div>
+    <p class="font-bold">Popular Games</p>
+    <!-- popular games list -->
+    <div class="flex items-center h-20 gap-2">
+        <img src="images/valorant.png" alt="" class="w-20 h-auto">
+        <img src="images/rocket-league.png" alt="" class="w-20 h-auto">
+        <img src="images/mobile-legends.png" alt="" class="w-20 h-auto">
+        <img src="images/clash-of-clans.png" alt="" class="w-20 h-auto">
+    </div>
+    <p class="font-bold">Categories</p>
+    <div class="flex items-center gap-2 h-16">
+        <div class="flex items-center bg-[#495D96] rounded-lg p-2 cursor-pointer w-auto text-white shadow-xl">All</div>
+        <div class="flex items-center bg-white rounded-lg p-2 cursor-pointer  font-bold shadow-xl hover:scale-110">FPS</div>
+        <div class="flex items-center bg-white rounded-lg p-2 cursor-pointer font-bold shadow-xl hover:scale-110">RPG</div>
+        <div class="flex items-center bg-white rounded-lg p-2 cursor-pointer font-bold shadow-xl hover:scale-110">Sports</div>
+        <div class="flex items-center bg-white rounded-lg p-2 cursor-pointer font-bold shadow-xl hover:scale-110">Action</div>
+        <div class="flex items-center bg-white rounded-lg p-2 cursor-pointer font-bold shadow-xl hover:scale-110">Racing</div>
+    </div>
+    <!-- game card -->
+     <div class="w-full h-64 bg-white rounded-xl overflow-hidden">
+        <!-- poster image -->
+        <div class="h-2/3">
+            <img src="images/gta5.jpg" alt="" class="w-full h-full object-cover">
+        </div>
+        <!-- card content -->
+         <div class="flex justify-between items-center h1/3 p-2">
+            <div class="flex flex-col ">
+
+            </div>
+         </div>
+     </div>
+  </div>
+      <!-- navbar -->
+    <div class="flex justify-around items-center bg-[#E9ECF5] p-2 h-12 sticky bottom-0 rounded-t-xl">
+        <i class="text-2xl fa-solid fa-house text-[#495D96]"></i>
+        <i class="text-2xl fa-solid fa-cart-shopping text-[#495D96]"></i>
+        <i class="text-2xl fa-solid fa-user text-[#495D96]"></i>
+    </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
