@@ -4,7 +4,12 @@ import { events } from "./events.js";
 const root = document.getElementById("root")
 const AppState = "home"
 const cart = []
-const category = "All"
+let category = "All"
+
+export function setCategory(newValue){
+    category = newValue
+    render()
+}
 
 function render() {
         root.innerHTML = App();
@@ -12,9 +17,9 @@ function render() {
 
 function App(){
     if(AppState == "home"){
-        return HomePage(games,category);
+        return HomePage(games,category,setCategory)
     } else if(AppState == "cart"){
-        return CartPage(cart);
+        return CartPage(cart)
     }
 }
 
