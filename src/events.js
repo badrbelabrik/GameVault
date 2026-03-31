@@ -1,9 +1,8 @@
 import { setCategory } from "./main.js"
-
+const root = document.getElementById("root")
 export function events(){
-    const categories = document.getElementById("categories")
-
-    categories.addEventListener("click", (e)=>{
+    
+    root.addEventListener("click", (e)=>{
         e.preventDefault()
         const btn = e.target.closest("[data-category]");
         if(btn){
