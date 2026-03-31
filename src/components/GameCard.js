@@ -2,7 +2,7 @@ export function GameCard(title,image,rating,price,category){
     return `     <div class="w-full h-72 bg-white rounded-xl overflow-hidden">
                     <!-- poster image -->
                     <div class="h-2/3">
-                        <img src="${image}" alt="" class="w-full h-full object-cover">
+                        <img src="${image}" alt="" class="w-full h-full object-fill">
                     </div>
                     <!-- card content -->
                         <div class="flex justify-between items-center h1/3 p-2">
@@ -11,7 +11,7 @@ export function GameCard(title,image,rating,price,category){
                             <p class="font-bold">${rating}<i class="fa-solid fa-star text-[#F4CD2A]"></i></p>
                             <P class="font-bold">${price} $</P>
                         </div>
-                        <div class="flex items-center bg-white rounded-lg p-2 font-bold shadow-xl">${category}</div>
+                        <div class="flex items-center bg-white rounded-lg p-2 font-bold shadow-xl place-self-end">${category}</div>
                     </div>
                 </div>`
 }
