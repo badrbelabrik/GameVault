@@ -21,7 +21,7 @@ export const games = [
     price: 19.99,
     image: "https://media.rawg.io/media/games/b01/b01aa6b2d6d4f683203e9471a8b8d5b5.jpg",
     rating: 4.04,
-    category: "Indie"
+    category: "Adventure"
   },
   {
     id: 4,
