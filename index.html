@@ -14,7 +14,7 @@
 
 <body>
   <div id="root" class="min-h-screen flex flex-col gap-2 p-4 bg-[#F3F4F6]">
-    <div class="flex items-center p-4 bg-[#E9ECF5] rounded-full">
+    <div class="flex items p-4 bg-[#E9ECF5] rounded-full">
         <i class="fa-solid fa-magnifying-glass"></i>
         <input class="flex-1 text-center outline-none" placeholder="Search">
     </div>
@@ -35,7 +35,10 @@
         <div class="flex items-center bg-white rounded-lg p-2 cursor-pointer font-bold shadow-xl hover:scale-110">Action</div>
         <div class="flex items-center bg-white rounded-lg p-2 cursor-pointer font-bold shadow-xl hover:scale-110">Racing</div>
     </div>
-    <!-- game card -->
+    <!-- cards container -->
+        <div class="flex flex-col justify-center items-center gap-4">
+
+    <!-- game card 1 -->
      <div class="w-full h-72 bg-white rounded-xl overflow-hidden">
         <!-- poster image -->
         <div class="h-2/3">
@@ -67,6 +70,9 @@
             <div class="flex items-center bg-white rounded-lg p-2 font-bold shadow-xl">Action</div>
          </div>
      </div>
+
+        </div>
+
   </div>
       <!-- navbar -->
     <div class="flex justify-around items-center bg-[#E9ECF5] p-2 h-12 sticky bottom-0 rounded-t-xl">
