@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Vault</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+  <div id="root" class="min-h-screen flex items-center gap-8 p-4 bg-[#F3F4F6]">
+    <div class="w-full flex flex-col justify-center gap-4">
+        <h1 class="font-bold text-2xl">Cart List</h1>
+        <!-- main cart -->
+        <div class="flex flex-col justify-center gap-6 p-4 bg-white rounded-2xl">
+            <!-- game details 1 -->
+            <div class="grid grid-cols-3 items-center gap-4">
+                <img src="images/valorant.png" alt="" class="w-20 h-20 object-fill">
+                <div class="flex flex-col items-center gap-2">
+                    <p class="font-bold">Grand theft auto 5</p>
+                    <div class="flex items-center gap-2">
+                        <input type="number" min="1" max="10" value="1" class="text-center outline-1 rounded-md">
+                        <i class="fa-solid fa-trash-can cursor-pointer hover:text-red-500 transition"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end">
+                    <p>QTY: 1</p>
+                    <p class="font-bold">29.99 $</p>
+                </div>
+            </div>
+                        <!-- game details 1 -->
+            <div class="grid grid-cols-3 items-center gap-4">
+                <img src="images/valorant.png" alt="" class="w-20 h-20 object-fill">
+                <div class="flex flex-col items-center gap-2">
+                    <p class="font-bold">Grand theft auto 5</p>
+                    <div class="flex items-center gap-2">
+                        <input type="number" min="1" max="10" value="1" class="text-center outline-1 rounded-md">
+                        <i class="fa-solid fa-trash-can cursor-pointer hover:text-red-500 transition"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end">
+                    <p>QTY: 1</p>
+                    <p class="font-bold">29.99 $</p>
+                </div>
+            </div>
+                        <!-- game details 1 -->
+            <div class="grid grid-cols-3 items-center gap-4">
+                <img src="images/valorant.png" alt="" class="w-20 h-20 object-fill">
+                <div class="flex flex-col items-center gap-2">
+                    <p class="font-bold">Grand theft auto 5</p>
+                    <div class="flex items-center gap-2">
+                        <input type="number" min="1" max="10" value="1" class="text-center outline-1 rounded-md">
+                        <i class="fa-solid fa-trash-can cursor-pointer hover:text-red-500 transition"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end">
+                    <p>QTY: 1</p>
+                    <p class="font-bold">29.99 $</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- checkout section -->
+        <div class="flex flex-col justify-center items-center gap-4">
+        <!-- total price -->
+         <p class="font-bold">Total Price: 114.97 $</p>
+         <!-- checkout button -->
+         <button class="text-white p-2 rounded-xl bg-[#495D96] cursor-pointer ">Continue to Checkout</button>
+        </div>
+
+    
+    </div>
+    <!-- navbar -->
+    <div class="flex justify-around items-center bg-[#E9ECF5] p-2 h-12 sticky bottom-0 rounded-t-xl">
+        <i class="text-2xl fa-solid fa-house text-[#495D96]"></i>
+        <i class="text-2xl fa-solid fa-cart-shopping text-[#495D96]"></i>
+        <i class="text-2xl fa-solid fa-user text-[#495D96]"></i>
+    </div>
+
+</body>
+
+</html>

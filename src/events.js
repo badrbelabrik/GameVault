@@ -10,6 +10,10 @@ export function events(){
         if(btn){
             setCategory(btn.dataset.category)
         }
+
+        if(el.closest(".game-card")){
+            console.log("you clicked on a card")
+        }
     })
 
     root.addEventListener("input",(e)=>{
@@ -23,7 +27,7 @@ export function events(){
         const el = e.target
         if(el.id == "search-bar"){
             setSearch("")
-        }
-            
+        }      
     })
+
 }

@@ -2,6 +2,7 @@ import { HomePage } from "./pages/HomePage.js";
 import { games } from "./services/gamesDB.js";
 import { events } from "./events.js";
 import { GameCard } from "./components/GameCard.js";
+import { Navbar } from "./components/Navbar.js";
 
 const root = document.getElementById("root")
 const AppState = "home"
@@ -17,10 +18,9 @@ export function setCategory(newValue){
 export function setSearch(newValue){
     searchValue = newValue
     renderCards()
-    console.log("the new search value:", searchValue)
 }
 
-export function renderCards(){
+function renderCards(){
     let filteredGames = []
     const container = document.getElementById("cards-container")
     if(category != "All"){
@@ -40,11 +40,19 @@ function render() {
 }
 
 function App(){
+    let page = ""
     if(AppState == "home"){
-        return HomePage(games,category,searchValue)
+        page = HomePage(games,category,searchValue)
     } else if(AppState == "cart"){
-        return CartPage(cart)
+        page = CartPage(cart)
     }
+    return `
+        <div class="min-h-screen flex flex-col">
+            <main class="flex-1 p-4">
+                ${page}
+            </main>
+                ${Navbar(AppState)}
+        </div>`
 }
 
 window.addEventListener("DOMContentLoaded",()=>{

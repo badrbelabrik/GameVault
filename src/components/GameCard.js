@@ -1,5 +1,5 @@
 export function GameCard(game){
-    return `     <div class="w-full h-72 bg-white rounded-xl overflow-hidden">
+    return `     <div class="game-card w-full h-72 bg-[#E9ECF5] rounded-xl overflow-hidden cursor-pointer" data-id="${game.id}">
                     <!-- poster image -->
                     <div class="h-2/3">
                         <img src="${game.image}" alt="" class="w-full h-full object-fill">
