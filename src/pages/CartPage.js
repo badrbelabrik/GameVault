@@ -13,6 +13,6 @@ function calculTotal(games){
         total += game.price
     }
 
-    return total
+    return total.toFixed(2)
 }
 

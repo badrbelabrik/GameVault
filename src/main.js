@@ -12,6 +12,11 @@ let cart = getCart()
 let category = "All"
 let searchValue = ""
 
+export function updateCart(newCart){
+    cart = newCart
+    setCart(newCart)
+}
+
 export function setCategory(newValue){
     category = newValue
     renderCards()
@@ -30,18 +35,31 @@ export function setAppState(newValue){
 export function addToCart(gameId){
     const currentGame = games.find(game => game.id == gameId)
     const isExisting = cart.find(game => game.id == currentGame.id)
+    let updatedCart;
+    if(isExisting) {
+        updatedCart = cart.map(game => 
+           game.id === Number(gameId) ? {...game,quantity: game.quantity + 1} : game
+        )
+    } else {
+        updatedCart = [...cart, {...currentGame, quantity: 1}]
+    }
     
-    if(isExisting) return;
-
-    cart.push(currentGame)
-    setCart(cart)
+    updateCart(updatedCart)
 }
 
 export function deleteFromCart(gameId){
     const updatedCart = cart.filter(game => game.id !== Number(gameId))
-    cart = updatedCart
-    setCart(cart)
+    updateCart(updatedCart)
     render()
+}
+
+export function changeQuantity(gameId,qty){
+    const updatedCart = cart.map(game => {
+        if(game.id === Number(gameId)) {
+            return {...game,quantity: qty}
+        } return game
+    })
+    updateCart(updatedCart)
 }
 
 function renderCards(){

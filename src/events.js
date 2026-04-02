@@ -1,4 +1,4 @@
-import { setAppState,setCategory,setSearch,addToCart,deleteFromCart } from "./main.js"
+import { setAppState,setCategory,setSearch,addToCart,deleteFromCart,changeQuantity } from "./main.js"
 const root = document.getElementById("root")
 const searchInput = document.getElementById("search-bar")
 export function events(){
@@ -32,8 +32,14 @@ export function events(){
 
     root.addEventListener("input",(e)=>{
         const el = e.target
+
         if(el.id == "search-bar"){
             setSearch(el.value)
+        }
+
+        if(el.closest(".quantity-counter")){
+            const gameId = el.closest(".game-column").dataset.id
+            changeQuantity(gameId,el.value)
         }
     })
 
@@ -41,7 +47,17 @@ export function events(){
         const el = e.target
         if(el.id == "search-bar"){
             setSearch("")
-        }      
+        }
+        
+        if (el.matches(".quantity-counter")) {
+            let value = Number(el.value);
+
+            if (value < 1) value = 1;
+            if (value > 10) value = 10;
+
+            el.value = value;
+            el.dispatchEvent(new Event("input", { bubbles: true }));
+        }
     })
 
 }
