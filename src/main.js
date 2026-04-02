@@ -4,10 +4,11 @@ import { games } from "./services/gamesDB.js";
 import { events } from "./events.js";
 import { GameCard } from "./components/GameCard.js";
 import { Navbar } from "./components/Navbar.js";
+import { setCart,getCart } from "./services/storageService.js";
 
 const root = document.getElementById("root")
 let AppState = "home"
-const cart = []
+export const cart = getCart()
 let category = "All"
 let searchValue = ""
 
@@ -24,6 +25,12 @@ export function setSearch(newValue){
 export function setAppState(newValue){
     AppState = newValue
     render()
+}
+
+export function addToCart(gameId){
+    const currentGame = games.find(game => game.id == gameId)
+    cart.push(currentGame)
+    setCart(cart)
 }
 
 function renderCards(){
@@ -50,8 +57,9 @@ function App(){
     if(AppState == "home"){
         page = HomePage(games,category,searchValue)
     } else if(AppState == "cart"){
-        page = CartPage()
+        page = CartPage(cart)
     }
+
     if(AppState == "home") return `
         <div class="min-h-screen flex flex-col">
             <main class="flex-1 p-4">
@@ -59,6 +67,7 @@ function App(){
             </main>
                 ${Navbar(AppState)}
         </div>`
+
     else if(AppState == "cart")   return `
         <div class="min-h-screen flex flex-col">
             <main class="flex-1 flex flex-col md:flex-row md:items-start gap-4 p-4">

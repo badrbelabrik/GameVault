@@ -1,4 +1,4 @@
-import { setAppState,setCategory,setSearch } from "./main.js"
+import { setAppState,setCategory,setSearch,addToCart,cart } from "./main.js"
 const root = document.getElementById("root")
 const searchInput = document.getElementById("search-bar")
 export function events(){
@@ -12,7 +12,8 @@ export function events(){
         }
 
         if(el.closest(".game-card")){
-            console.log("you clicked on a card")
+            const gameId = el.closest(".game-card").dataset.id
+            addToCart(gameId)
         }
 
         if(el.closest(".go-home")){
