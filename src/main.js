@@ -1,11 +1,12 @@
 import { HomePage } from "./pages/HomePage.js";
+import { CartPage } from "./pages/CartPage.js";
 import { games } from "./services/gamesDB.js";
 import { events } from "./events.js";
 import { GameCard } from "./components/GameCard.js";
 import { Navbar } from "./components/Navbar.js";
 
 const root = document.getElementById("root")
-const AppState = "home"
+let AppState = "home"
 const cart = []
 let category = "All"
 let searchValue = ""
@@ -18,6 +19,11 @@ export function setCategory(newValue){
 export function setSearch(newValue){
     searchValue = newValue
     renderCards()
+}
+
+export function setAppState(newValue){
+    AppState = newValue
+    render()
 }
 
 function renderCards(){
@@ -44,15 +50,22 @@ function App(){
     if(AppState == "home"){
         page = HomePage(games,category,searchValue)
     } else if(AppState == "cart"){
-        page = CartPage(cart)
+        page = CartPage()
     }
-    return `
+    if(AppState == "home") return `
         <div class="min-h-screen flex flex-col">
             <main class="flex-1 p-4">
                 ${page}
             </main>
                 ${Navbar(AppState)}
         </div>`
+    else if(AppState == "cart")   return `
+        <div class="min-h-screen flex flex-col">
+            <main class="flex-1 flex flex-col md:flex-row md:items-start gap-4 p-4">
+                ${page}
+            </main>
+                ${Navbar(AppState)}
+        </div>`   
 }
 
 window.addEventListener("DOMContentLoaded",()=>{
