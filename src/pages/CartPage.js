@@ -10,7 +10,7 @@ export function CartPage(cart){
 function calculTotal(games){
     let total = 0
     for (const game of games){
-        total += game.price
+        total += game.price * game.quantity
     }
 
     return total.toFixed(2)

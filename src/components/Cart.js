@@ -25,13 +25,13 @@ function gameColumn(game){
                                 <div class="flex flex-col items-center gap-2">
                                     <p class="font-bold">${game.title}</p>
                                 <div class="flex items-center gap-2">
-                                    <input type="number" min="1" max="10" value="1" class="quantity-counter text-center outline-1 rounded-md">
+                                    <input type="number" min="1" max="10" value="${game.quantity}" class="quantity-counter text-center outline-1 rounded-md">
                                     <button class="delete-from-cart"><i class="fa-solid fa-trash-can cursor-pointer hover:text-red-500 transition"></i></button>
                                 </div>
                                 </div>
-                            <div class="flex flex-col items-end">
-                                <p>QTY: 1</p>
-                                <p class="font-bold">${game.price} $</p>
+                            <div class="flex flex-col items-end text-center">
+                                <p>QTY: ${game.quantity}</p>
+                                <p class="font-bold">${(game.price*game.quantity).toFixed(2)} $</p>
                             </div>
                             </div>`
 }

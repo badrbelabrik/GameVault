@@ -12,7 +12,7 @@ let cart = getCart()
 let category = "All"
 let searchValue = ""
 
-export function updateCart(newCart){
+function updateCart(newCart){
     cart = newCart
     setCart(newCart)
 }
@@ -45,6 +45,7 @@ export function addToCart(gameId){
     }
     
     updateCart(updatedCart)
+    render()
 }
 
 export function deleteFromCart(gameId){
@@ -60,6 +61,7 @@ export function changeQuantity(gameId,qty){
         } return game
     })
     updateCart(updatedCart)
+    render()
 }
 
 function renderCards(){
@@ -90,7 +92,7 @@ function App(){
     }
 
     if(AppState == "home") return `
-        <div class="min-h-screen flex flex-col">
+        <div class="min-h-screen min-w-sm flex flex-col">
             <main class="flex-1 p-4">
                 ${page}
             </main>
@@ -98,7 +100,7 @@ function App(){
         </div>`
 
     else if(AppState == "cart")   return `
-        <div class="min-h-screen flex flex-col">
+        <div class="min-h-screen min-w-sm flex flex-col">
             <main class="flex-1 flex flex-col md:flex-row md:items-start gap-4 p-4">
                 ${page}
             </main>
