@@ -1,4 +1,4 @@
-import { setAppState,setCategory,setSearch,addToCart,cart } from "./main.js"
+import { setAppState,setCategory,setSearch,addToCart,deleteFromCart } from "./main.js"
 const root = document.getElementById("root")
 const searchInput = document.getElementById("search-bar")
 export function events(){
@@ -22,6 +22,11 @@ export function events(){
 
         if(el.closest(".go-cart")){
             setAppState("cart")
+        }
+
+        if(el.closest(".delete-from-cart")){
+            const gameId = el.closest(".game-column").dataset.id
+            deleteFromCart(gameId)
         }
     })
 

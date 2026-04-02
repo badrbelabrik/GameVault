@@ -8,7 +8,7 @@ import { setCart,getCart } from "./services/storageService.js";
 
 const root = document.getElementById("root")
 let AppState = "home"
-export const cart = getCart()
+let cart = getCart()
 let category = "All"
 let searchValue = ""
 
@@ -29,8 +29,19 @@ export function setAppState(newValue){
 
 export function addToCart(gameId){
     const currentGame = games.find(game => game.id == gameId)
+    const isExisting = cart.find(game => game.id == currentGame.id)
+    
+    if(isExisting) return;
+
     cart.push(currentGame)
     setCart(cart)
+}
+
+export function deleteFromCart(gameId){
+    const updatedCart = cart.filter(game => game.id !== Number(gameId))
+    cart = updatedCart
+    setCart(cart)
+    render()
 }
 
 function renderCards(){

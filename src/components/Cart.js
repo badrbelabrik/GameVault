@@ -20,13 +20,13 @@ function ListGames(games){
 }
 
 function gameColumn(game){
-    return `                <div class="grid grid-cols-3 items-center gap-4">
-                                <img src="${game.image}" alt="" class="w-20 h-20 rounded-xl object-fill">
+    return `                <div class="game-column grid grid-cols-3 items-center gap-4" data-id=${game.id}>
+                                <img src="${game.image}" alt="" class="w-20 h-18 rounded-xl object-fill">
                                 <div class="flex flex-col items-center gap-2">
                                     <p class="font-bold">${game.title}</p>
                                 <div class="flex items-center gap-2">
                                     <input type="number" min="1" max="10" value="1" class="text-center outline-1 rounded-md">
-                                    <i class="fa-solid fa-trash-can cursor-pointer hover:text-red-500 transition"></i>
+                                    <button class="delete-from-cart"><i class="fa-solid fa-trash-can cursor-pointer hover:text-red-500 transition"></i></button>
                                 </div>
                                 </div>
                             <div class="flex flex-col items-end">
