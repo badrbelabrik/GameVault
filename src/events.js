@@ -1,4 +1,4 @@
-import { setAppState, setCategory, setSearch, addToCart, deleteFromCart, changeQuantity } from "./main.js"
+import { setAppState, setCategory, setSearch, addToCart, deleteFromCart, changeQuantity,ClearCart,showMessage } from "./main.js"
 const root = document.getElementById("root")
 let eventsInitialized = false
 export function events() {
@@ -35,6 +35,10 @@ export function events() {
         if (el.closest(".delete-from-cart")) {
             const gameId = el.closest(".game-column").dataset.id
             deleteFromCart(gameId)
+        }
+
+        if(el.closest(".purchase")){
+            ClearCart("your purchase complete")
         }
     })
 

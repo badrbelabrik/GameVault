@@ -5,8 +5,7 @@ import { events } from "./events.js";
 import { GameCard } from "./components/GameCard.js";
 import { Navbar } from "./components/Navbar.js";
 import { saveCart,getCart } from "./services/storageService.js";
-
-console.count("main.js loaded");
+import { AlertMessage } from "./components/AlertMessage.js";
 
 const root = document.getElementById("root")
 let AppState = "home"
@@ -66,6 +65,19 @@ export function changeQuantity(gameId,qty){
     render()
 }
 
+export function ClearCart(message){
+    cart = []
+    showMessage(message)
+    render()
+}
+
+export function showMessage(message){
+    root.innerHTML += AlertMessage(message)
+    setTimeout(() =>{
+        document.getElementById("message").classList.add("hidden")
+    }, 5000)
+}
+
 function renderCards(){
     let filteredGames = []
     const container = document.getElementById("cards-container")
@@ -82,7 +94,6 @@ function renderCards(){
 }
 
 function render() {
-    console.count("render called");
     root.innerHTML = App();
 }
 

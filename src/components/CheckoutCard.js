@@ -1,7 +1,7 @@
 export function CheckoutCard(total){
     return `<div class="w-full h-full flex flex-col justify-center items-center gap-4 p-4 bg-white rounded-2xl md:w-1/3 md:sticky md:top-4">
                 <!-- coupon -->
-                <div class="w-full flex flex-col gap-2 place-self-start">
+                <div class="w-full flex flex-col gap-2 place-self-start place-">
                     <p>Have coupon?</p>
                     <div class="flex w-full rounded-lg overflow-hidden border border-gray-300">
                         <input type="text" placeholder="Coupon code" class="flex-1 px-4 py-2 outline-none bg-gray-50"/>
@@ -29,7 +29,7 @@ export function CheckoutCard(total){
                 </div>
                 <!-- checkout buttons -->
                 <div class="flex flex-col gap-2 w-full">
-                    <button class="text-white p-2 rounded-xl bg-[#00A524] cursor-pointer ">Continue to Checkout</button>
+                    <button class="purchase text-white p-2 rounded-xl bg-[#00A524] cursor-pointer ">Make purchase</button>
                     <button class="go-home text-white p-2 rounded-xl bg-[#bababa] cursor-pointer ">Back to shop</button>
                 </div>
             </div>`
