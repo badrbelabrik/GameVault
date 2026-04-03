@@ -4,7 +4,9 @@ import { games } from "./services/gamesDB.js";
 import { events } from "./events.js";
 import { GameCard } from "./components/GameCard.js";
 import { Navbar } from "./components/Navbar.js";
-import { setCart,getCart } from "./services/storageService.js";
+import { saveCart,getCart } from "./services/storageService.js";
+
+console.count("main.js loaded");
 
 const root = document.getElementById("root")
 let AppState = "home"
@@ -14,7 +16,7 @@ let searchValue = ""
 
 function updateCart(newCart){
     cart = newCart
-    setCart(newCart)
+    saveCart(newCart)
 }
 
 export function setCategory(newValue){
@@ -80,7 +82,8 @@ function renderCards(){
 }
 
 function render() {
-        root.innerHTML = App();
+    console.count("render called");
+    root.innerHTML = App();
 }
 
 function App(){

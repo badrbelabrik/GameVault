@@ -30,8 +30,8 @@ function gameColumn(game){
                                 </div>
                                 </div>
                             <div class="flex flex-col items-end text-center">
-                                <p>QTY: ${game.quantity}</p>
                                 <p class="font-bold">${(game.price*game.quantity).toFixed(2)} $</p>
+                                <p>${game.price} $/unit</p>                                
                             </div>
                             </div>`
 }
