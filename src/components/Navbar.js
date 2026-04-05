@@ -1,6 +1,6 @@
 export function Navbar(currentPage){
     return `    
-        <nav class="flex justify-around items-center bg-[#E9ECF5] p-2 h-12 sticky bottom-0 rounded-t-xl">
+        <nav class="flex justify-around items-center bg-[#E9ECF5] p-2 h-12 sticky bottom-0 rounded-t-xl md:hidden">
             <button class="go-home flex justify-center items-center p-2 rounded-2xl cursor-pointer ${currentPage === "home" ? "bg-[#495D96]" : ""}">
                 <i class="text-2xl fa-solid fa-house ${currentPage === "home" ? "text-white" : "text-[#495D96]"}"></i>
             </button>    

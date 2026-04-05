@@ -38,7 +38,7 @@ export function events() {
         }
 
         if(el.closest(".purchase")){
-            ClearCart("your purchase complete")
+            ClearCart()
         }
     })
 

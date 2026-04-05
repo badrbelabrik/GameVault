@@ -29,7 +29,7 @@ export function CheckoutCard(total){
                 </div>
                 <!-- checkout buttons -->
                 <div class="flex flex-col gap-2 w-full">
-                    <button class="purchase text-white p-2 rounded-xl bg-[#00A524] cursor-pointer ">Make purchase</button>
+                    <button class="purchase text-white p-2 rounded-xl bg-[#495D96] cursor-pointer ">Make purchase</button>
                     <button class="go-home text-white p-2 rounded-xl bg-[#bababa] cursor-pointer ">Back to shop</button>
                 </div>
             </div>`

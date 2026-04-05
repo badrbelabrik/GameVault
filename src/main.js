@@ -5,7 +5,8 @@ import { events } from "./events.js";
 import { GameCard } from "./components/GameCard.js";
 import { Navbar } from "./components/Navbar.js";
 import { saveCart,getCart } from "./services/storageService.js";
-import { AlertMessage } from "./components/AlertMessage.js";
+import { AlertMessage,purchaseAlert } from "./components/AlertMessage.js";
+import { Header } from "./components/Header.js";
 
 const root = document.getElementById("root")
 let AppState = "home"
@@ -47,6 +48,7 @@ export function addToCart(gameId){
     
     updateCart(updatedCart)
     render()
+    showAlert()
 }
 
 export function deleteFromCart(gameId){
@@ -65,16 +67,27 @@ export function changeQuantity(gameId,qty){
     render()
 }
 
-export function ClearCart(message){
+export function ClearCart(){
     cart = []
-    showMessage(message)
+    updateCart(cart)
     render()
+    setAppState("home")
+    showMessage()
 }
 
-export function showMessage(message){
-    root.innerHTML += AlertMessage(message)
+export function showMessage(){
+    root.innerHTML += purchaseAlert()
     setTimeout(() =>{
-        document.getElementById("message").classList.add("hidden")
+        const message = document.getElementById("purchase-message")
+        message.remove()
+    }, 5000)
+}
+
+export function showAlert(){
+    root.innerHTML += AlertMessage()
+    setTimeout(() =>{
+        const alert = document.getElementById("add-message")
+        alert.remove()
     }, 5000)
 }
 
@@ -115,6 +128,7 @@ function App(){
 
     else if(AppState == "cart")   return `
         <div class="min-h-screen min-w-sm flex flex-col">
+            ${Header()}
             <main class="flex-1 flex flex-col md:flex-row md:items-start gap-4 p-4">
                 ${page}
             </main>
