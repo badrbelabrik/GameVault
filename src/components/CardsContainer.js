@@ -1,8 +1,9 @@
 import { GameCard } from "./GameCard.js"
 
-export function CardsContainer(games){
+export function CardsContainer(games,number){
     return `<div id="cards-container" class="flex flex-col justify-center items-center gap-4 sm:grid sm:grid-cols-2 md:grid-cols-4">
-                ${ListCards(games)}
+                <p>number : ${number}</p>
+    ${ListCards(games)}
             </div>`
 }
 

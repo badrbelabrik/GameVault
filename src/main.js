@@ -90,9 +90,9 @@ export function showAlert(){
         alert.remove()
     }, 5000)
 }
-
+let filteredGames = []
 function renderCards(){
-    let filteredGames = []
+    
     const container = document.getElementById("cards-container")
     if(category != "All"){
         filteredGames = games.filter(game => game.category === category)
@@ -104,6 +104,16 @@ function renderCards(){
     }
 
     container.innerHTML = filteredGames.map(GameCard).join("")
+    const number = document.getElementById("number")
+    number.textContent = filteredGames.length
+}
+
+function calculNumber(){
+    if(filteredGames.length <= 0){
+        return games.length
+    } else{
+        return filteredGames.length
+    }
 }
 
 function render() {
@@ -113,7 +123,7 @@ function render() {
 function App(){
     let page = ""
     if(AppState == "home"){
-        page = HomePage(games,category,searchValue)
+        page = HomePage(games,category,searchValue,filteredGames.length)
     } else if(AppState == "cart"){
         page = CartPage(cart)
     }
