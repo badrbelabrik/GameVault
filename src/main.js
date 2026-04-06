@@ -105,7 +105,7 @@ function renderCards(){
 
     container.innerHTML = filteredGames.map(GameCard).join("")
     const number = document.getElementById("number")
-    number.textContent = filteredGames.length
+    number.textContent = calculNumber()
 }
 
 function calculNumber(){
@@ -149,4 +149,6 @@ function App(){
 window.addEventListener("DOMContentLoaded",()=>{
     render()
     events()
+    const number = document.getElementById("number")
+    number.textContent = calculNumber()
 })
